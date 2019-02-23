@@ -1,4 +1,10 @@
-/*
+/*Part of the Development of Real-Time Systems course.
+	This file is using the FreeRTOS Kernel.
+	The assigment's code is mostly in lines 142-183.
+	
+	Created By Yehonatan Ben Harush, 20/2/2019
+
+
  * FreeRTOS Kernel V10.0.1
  * Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
@@ -167,7 +173,7 @@ int main( void )
 	/* Initialise the trace recorder.  Use of the trace recorder is optional.
 	See http://www.FreeRTOS.org/trace for more information. */
 	vTraceEnable( TRC_START );
-
+	//Basic usage of the xTaskCreate, giving priorities to tasks and making an infinite loop of the tasks.
 	xTaskHandle HT,HT1,HT2;
 	xTaskCreate(HelloTask, "HelloTask", configMINIMAL_STACK_SIZE, NULL, 1, &HT);
 	xTaskCreate(Task1, "Task1", 1000, NULL, 3, &HT1);
